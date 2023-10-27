@@ -1,14 +1,26 @@
-package com.anand.addressservice.response;
+package com.anand.addressservice.entity;
 
 
-public class AddressResponse { 
+import jakarta.persistence.*; 
 
+@Entity
+@Table(name = "address") 
+public class Address { 
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) 
+	@Column(name = "id") 
 	private int id; 
+
+	@Column(name = "city") 
 	private String city; 
-	private String state;
+
+	@Column(name = "state") 
+	private String state; 
+	
 	
 
-
+	
 	public int getId() { 
 		return id; 
 	} 
@@ -34,6 +46,7 @@ public class AddressResponse {
 	}
 
 	
+
+	
 	
 } 
-
